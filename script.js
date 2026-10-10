@@ -1,10 +1,10 @@
 // Project links: paste each project's live URL here.
 // While a value is empty, the project title just isn't clickable.
 const PROJECT_LINKS = {
-  nexcent: "",
+  nexcent: "https://nexcent-chi-cyan.vercel.app/",
   worknest: "",
-  lagos: "",
-  lusterquest: "",
+  lagos: "https://driving-in-lagos.vercel.app/",
+  lusterquest: "https://lusterquest.vercel.app/",
 };
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -38,6 +38,14 @@ document.querySelectorAll(".work-item").forEach((item) => {
     link.href = url;
     link.target = "_blank";
     link.rel = "noopener";
+    // visible "visit" button under the tool tags
+    const btn = document.createElement("a");
+    btn.className = "live-btn";
+    btn.href = url;
+    btn.target = "_blank";
+    btn.rel = "noopener";
+    btn.textContent = "Visit the live site ↗";
+    (item.querySelector(".chips") || link).after(btn);
   } else {
     link.removeAttribute("href");
   }

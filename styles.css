@@ -200,6 +200,9 @@ a { color: inherit; }
 .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 4px 26px; padding: 0; }
 .chips li { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--soft); box-shadow: inset 0 0 0 1px var(--line); }
 
+.live-btn { display: inline-block; margin: -10px 4px 28px; padding: 9px 18px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .2s, transform .3s cubic-bezier(.2,1.4,.4,1); }
+.live-btn:hover { background: var(--coral); transform: translateY(-2px); }
+
 /* ===== Toolkit ===== */
 .toolkit { max-width: var(--wrap); margin: 0 auto; padding: 72px 24px; }
 .toolkit .section-title { margin-bottom: 12px; }
