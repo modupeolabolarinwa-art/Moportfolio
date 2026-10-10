@@ -4,8 +4,9 @@ A static portfolio site (HTML, CSS, JavaScript) with no build step, ready for Ve
 
 ```
 index.html     the page content
+404.html       custom "stuck in go-slow" error page (Vercel uses it automatically)
 styles.css     colours, type and layout (tokens at the top)
-script.js      project links: paste your live and GitHub URLs here
+script.js      project links, preloader, hover previews, footer animation
 vercel.json    Vercel settings
 assets/        favicon; put project screenshots here
 ```
@@ -30,6 +31,6 @@ Open `index.html` in a browser, or run `npx serve .` and visit http://localhost:
 You can also deploy without GitHub: `npm i -g vercel`, then run `vercel` and then `vercel --prod` in this folder.
 
 ## Things to update
-- **Project links:** fill in `PROJECT_LINKS` in `script.js`. Empty values stay hidden.
-- **Screenshots:** the project images are drawn in CSS. To use real screenshots, save them in `assets/` and replace the inner HTML of each `.shot` div with `<img src="assets/worknest.png" alt="WorkNest application flow">`.
-- **Nexcent:** check that the description matches what you built.
+- **Project links:** fill in `PROJECT_LINKS` in `script.js`. Each project title becomes a link once its URL is filled in.
+- **Screenshots:** the project images are drawn in CSS. To use real screenshots, save them in `assets/` and replace the inside of each `.pv` div near the bottom of the Work section with `<img src="assets/worknest.png" alt="WorkNest application flow">`.
+- **Years and descriptions:** every project shows 2026, so correct the years and check the Nexcent description.

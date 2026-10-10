@@ -1,27 +1,86 @@
-// Project links: paste your live URLs and GitHub repos here.
-// Leave a value empty ("") and that link won't show.
+// Project links: paste each project's live URL here.
+// While a value is empty, the project title just isn't clickable.
 const PROJECT_LINKS = {
-  nexcent:     { live: "", code: "" },
-  worknest:    { live: "", code: "" },
-  lagos:       { live: "", code: "" },
-  lusterquest: { live: "", code: "" },
+  nexcent: "",
+  worknest: "",
+  lagos: "",
+  lusterquest: "",
 };
 
-document.querySelectorAll(".links[data-project]").forEach((box) => {
-  const links = PROJECT_LINKS[box.dataset.project] || {};
-  const items = [
-    [links.live, "View live site"],
-    [links.code, "View code on GitHub"],
-  ];
-  items.forEach(([href, label]) => {
-    if (!href) return;
-    const a = document.createElement("a");
-    a.href = href;
-    a.textContent = label;
-    a.target = "_blank";
-    a.rel = "noopener";
-    box.appendChild(a);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Preloader: counts to 100, then slides up. Shown once per visit. ---------- */
+(function preloader() {
+  const loader = document.querySelector(".loader");
+  if (!loader || document.documentElement.classList.contains("no-loader") || reduceMotion) return;
+  document.body.style.overflow = "hidden";
+  const count = document.getElementById("count");
+  const start = performance.now();
+  const total = 1300;
+  function tick(now) {
+    const p = Math.min(1, (now - start) / total);
+    count.textContent = Math.round((1 - Math.pow(1 - p, 3)) * 100);
+    if (p < 1) return requestAnimationFrame(tick);
+    loader.classList.add("done");
+    document.body.style.overflow = "";
+    try { sessionStorage.setItem("mo-seen", "1"); } catch (e) {}
+    setTimeout(() => loader.remove(), 900);
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- Work list: links, hover preview that follows the cursor, inline previews on mobile ---------- */
+const previews = document.querySelector(".previews");
+document.querySelectorAll(".work-item").forEach((item) => {
+  const link = item.querySelector(".work-link");
+  const url = PROJECT_LINKS[item.dataset.project];
+  if (url) {
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener";
+  } else {
+    link.removeAttribute("href");
+  }
+
+  // inline copy of the preview for touch screens
+  const pv = document.getElementById(item.dataset.preview);
+  if (pv) {
+    const inline = pv.firstElementChild.cloneNode(true);
+    const wrap = document.createElement("div");
+    wrap.className = "pv-inline";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.appendChild(inline);
+    item.appendChild(wrap);
+  }
+
+  item.addEventListener("mouseenter", () => {
+    document.querySelectorAll(".pv").forEach((p) => p.classList.toggle("on", p.id === item.dataset.preview));
+    previews.classList.add("show");
   });
+  item.addEventListener("mouseleave", () => previews.classList.remove("show"));
 });
+
+let mx = 0, my = 0, px = 0, py = 0;
+// keep the preview to the right of the cursor and inside the window
+window.addEventListener("mousemove", (e) => {
+  mx = Math.min(e.clientX + 230, window.innerWidth - 190);
+  my = Math.min(Math.max(e.clientY, 160), window.innerHeight - 160);
+});
+(function follow() {
+  px += (mx - px) * (reduceMotion ? 1 : 0.15);
+  py += (my - py) * (reduceMotion ? 1 : 0.15);
+  previews.style.left = px + "px";
+  previews.style.top = py + "px";
+  requestAnimationFrame(follow);
+})();
+
+/* ---------- Footer stickers drop in when the footer scrolls into view ---------- */
+const footer = document.querySelector(".footer");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { footer.classList.add("in"); io.disconnect(); } });
+  }, { threshold: 0.25 });
+  io.observe(footer);
+}
 
 document.getElementById("year").textContent = new Date().getFullYear();
