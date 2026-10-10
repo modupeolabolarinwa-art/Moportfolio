@@ -71,7 +71,7 @@ document.querySelectorAll(".work-item").forEach((item) => {
 let mx = 0, my = 0, px = 0, py = 0;
 // keep the preview to the right of the cursor and inside the window
 window.addEventListener("mousemove", (e) => {
-  mx = Math.min(e.clientX + 230, window.innerWidth - 190);
+  mx = Math.min(e.clientX + 270, window.innerWidth - 230);
   my = Math.min(Math.max(e.clientY, 160), window.innerHeight - 160);
 });
 (function follow() {

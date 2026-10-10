@@ -105,7 +105,7 @@ a { color: inherit; }
 .work-blurb em { display: block; margin-top: 6px; font-style: normal; font-weight: 600; font-size: 14px; color: var(--ink); }
 .work-item:hover .work-title { transform: translateX(14px); color: var(--coral); }
 
-.previews { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 30; width: 340px; opacity: 0; transform: translate(-50%,-50%) scale(.85) rotate(-4deg); transition: opacity .25s, transform .35s cubic-bezier(.2,1.4,.4,1); }
+.previews { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 30; width: 420px; opacity: 0; transform: translate(-50%,-50%) scale(.85) rotate(-4deg); transition: opacity .25s, transform .35s cubic-bezier(.2,1.4,.4,1); }
 .previews.show { opacity: 1; transform: translate(-50%,-50%) scale(1) rotate(-4deg); }
 .pv { display: none; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -18px rgba(0,0,0,.35); }
 .pv.on { display: block; }
@@ -116,7 +116,7 @@ a { color: inherit; }
 .real-shot.loaded { opacity: 1; }
 
 /* ===== Mock screenshots (fallback) ===== */
-.shot { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
 .browser { display: flex; gap: 6px; padding: 12px 14px; }
 .browser i { width: 9px; height: 9px; border-radius: 50%; background: rgba(0,0,0,.15); }
 .l { display: block; height: 12px; border-radius: 6px; background: currentColor; margin: 8px 0; }
