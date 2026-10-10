@@ -82,6 +82,28 @@ window.addEventListener("mousemove", (e) => {
   requestAnimationFrame(follow);
 })();
 
+/* ---------- Real project screenshots ----------
+   1. Your own screenshot in assets/shots/<project>.jpg (e.g. assets/shots/worknest.jpg) is used first.
+   2. If there isn't one, a live screenshot of the project's site is fetched from microlink.io.
+   3. If that fails too, the drawn preview underneath stays visible. */
+function liveShot(url) {
+  return "https://api.microlink.io/?url=" + encodeURIComponent(url) +
+    "&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1280&viewport.height=960&waitForTimeout=1500";
+}
+document.querySelectorAll(".real-shot").forEach((img) => {
+  const key = img.dataset.shot;
+  const sources = ["assets/shots/" + key + ".jpg", "assets/shots/" + key + ".png"];
+  if (PROJECT_LINKS[key]) sources.push(liveShot(PROJECT_LINKS[key]));
+  let i = 0;
+  img.addEventListener("load", () => img.classList.add("loaded"));
+  img.addEventListener("error", () => {
+    i += 1;
+    if (i < sources.length) img.src = sources[i];
+    else img.remove();
+  });
+  img.src = sources[0];
+});
+
 /* ---------- Footer skills drop in one after another when the footer scrolls into view ---------- */
 document.querySelectorAll(".pro-skills li").forEach((li, i) => li.style.setProperty("--i", i));
 const footer = document.querySelector(".footer");
