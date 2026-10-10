@@ -181,6 +181,35 @@ a { color: inherit; }
 .sk-pm .sticker { background: var(--sun); }
 .skill:hover .sticker { transform: rotate(-12deg) scale(1.12); }
 
+/* ===== Tool marquee ===== */
+.marquee { overflow: hidden; margin: 40px 0 0; padding: 18px 0; border-block: 1px solid var(--ink); background: var(--sun); }
+.marquee-track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.marquee-track span { font: italic 400 30px/1 var(--serif); padding: 0 22px; white-space: nowrap; }
+.marquee-track span::after { content: "✦"; font: 400 16px var(--sans); margin-left: 44px; position: relative; top: -5px; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ===== Project tool chips ===== */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: -12px 4px 26px; padding: 0; }
+.chips li { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--soft); box-shadow: inset 0 0 0 1px var(--line); }
+
+/* ===== Toolkit ===== */
+.toolkit { max-width: var(--wrap); margin: 0 auto; padding: 72px 24px; }
+.toolkit .section-title { margin-bottom: 12px; }
+.toolkit-lede { color: var(--mute); font-size: 18px; margin-bottom: 36px; }
+.tk-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.tk-group { border-radius: 28px; padding: 28px 30px 18px; box-shadow: inset 0 0 0 2px var(--ink); }
+.tk-group h3 { display: inline-block; font: 600 14px var(--sans); padding: 6px 14px; border-radius: 999px; margin-bottom: 10px; box-shadow: 0 0 0 2px var(--ink); }
+.tg-front h3 { background: var(--sky); }
+.tg-back h3 { background: var(--lilac); }
+.tg-auto h3 { background: var(--mint); }
+.tg-ship h3 { background: var(--sun); }
+.tk-group ul { list-style: none; margin: 0; padding: 0; }
+.tk-group li { display: grid; grid-template-columns: 170px 1fr; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); }
+.tk-group li:first-child { border-top: 0; }
+.tk-group b { font: italic 400 26px/1.1 var(--serif); }
+.tk-group span { color: var(--mute); font-size: 15px; }
+
 /* ===== Sidequests ===== */
 .sidequests { max-width: var(--wrap); margin: 0 auto; padding: 72px 24px; }
 .section-title span { color: var(--coral); font-style: italic; }
@@ -233,6 +262,8 @@ a { color: inherit; }
   .hcard.c3 { display: none; }
   .skill-grid, .about-grid { grid-template-columns: 1fr; }
   .sk-pm ul { columns: 1; }
+  .tk-groups { grid-template-columns: 1fr; }
+  .nav nav a[href="#toolkit"] { display: none; }
   .sq-grid { grid-template-columns: 1fr 1fr; }
   .work-link { flex-direction: column; gap: 6px; }
   .previews { display: none; }
@@ -251,6 +282,10 @@ a { color: inherit; }
   .skill { padding: 32px 22px 26px; }
   .skill h3 { font-size: 34px; }
   .sq-grid { grid-template-columns: 1fr; }
+  .toolkit { padding-left: 16px; padding-right: 16px; }
+  .tk-group { padding: 24px 20px 12px; }
+  .tk-group li { grid-template-columns: 1fr; gap: 2px; }
+  .marquee-track span { font-size: 24px; }
   .sq { min-height: 0; gap: 18px; }
   .work-meta { gap: 14px; font-size: 14px; }
   .footer { border-radius: 28px 28px 0 0; padding-left: 16px; padding-right: 16px; }
