@@ -1,37 +1,58 @@
 # Modupe Phillips portfolio
 
-A static portfolio site (HTML, CSS, JavaScript) with no build step, ready for Vercel.
+My portfolio site, built with **React** and **Vite**, deployed on **Vercel**.
+
+## Where things are
 
 ```
-index.html     the page content
-404.html       custom "stuck in go-slow" error page (Vercel uses it automatically)
-styles.css     colours, type and layout (tokens at the top)
-script.js      project links, preloader, hover previews, footer animation
-vercel.json    Vercel settings
-assets/        favicon; put project screenshots here
+src/data.js             ALL the content: projects, links, skills, toolkit, contact details
+src/components/         one file per section of the page
+  Loader.jsx            "Hi, I'm Mo" loading screen
+  Nav.jsx               top menu and logo
+  Hero.jsx              greeting, photo and the three tilted cards
+  Marquee.jsx           scrolling yellow tools strip
+  Work.jsx              project list and the preview that follows the cursor
+  Previews.jsx          project screenshots, with drawn previews as a fallback
+  Skills.jsx            "What I can do for you"
+  Toolkit.jsx           "My toolkit"
+  Sidequests.jsx        sidequest cards
+  About.jsx             about section
+  Footer.jsx            "let's build it", contact details and professional skills
+src/hooks.js            small helpers (reduced motion, scroll-into-view)
+src/styles.css          all the styling (colours and fonts at the top)
+public/assets/          photo, favicon and project screenshots (public/assets/shots/)
+public/404.html         the "stuck in go-slow" error page
 ```
 
-## Run it locally
-Open `index.html` in a browser, or run `npx serve .` and visit http://localhost:3000.
+To change any wording, project, link or skill, edit **`src/data.js`**. You rarely need to touch the components.
 
-## Put it on GitHub
-1. Create an empty repo on github.com called `portfolio` (don't add a README).
-2. In this folder, run:
+## Run it on your computer
+
+You need Node.js installed once (Windows: `winget install --id OpenJS.NodeJS.LTS -e`, then reopen PowerShell).
+
+```
+npm install      # first time only: downloads React and Vite into node_modules
+npm run dev      # starts the site at http://localhost:5173 and reloads as you edit
+```
+
+`npm run build` makes the finished site in `dist/`, and `npm run preview` shows that build.
+
+## Put it on GitHub and Vercel
+
+1. Create an empty repo on github.com called `mo-portfolio`.
+2. In this folder:
    ```
-   git remote add origin https://github.com/YOUR-USERNAME/portfolio.git
+   git remote add origin https://github.com/YOUR-USERNAME/mo-portfolio.git
    git push -u origin main
    ```
+3. On vercel.com: **Add New → Project**, pick `mo-portfolio`, click **Deploy**. Vercel detects Vite by itself.
+4. Every `git push` to `main` redeploys automatically.
 
-## Deploy on Vercel
-1. Sign in at vercel.com with GitHub.
-2. Click **Add New → Project**, pick the `portfolio` repo, then **Deploy**. Leave the framework as "Other" and the build command empty.
-3. Every `git push` to `main` now redeploys automatically.
-4. Optional: **Settings → Domains** to add your own domain.
-
-You can also deploy without GitHub: `npm i -g vercel`, then run `vercel` and then `vercel --prod` in this folder.
+Don't upload `node_modules` or `dist`. They're rebuilt automatically and `.gitignore` already leaves them out.
 
 ## Things to update
-- **Project links:** fill in `PROJECT_LINKS` in `script.js`. Each project title becomes a link once its URL is filled in.
-- **Screenshots:** each project shows, in order: your own screenshot from `assets/shots/` if there is one, otherwise a live screenshot of its site from microlink.io, otherwise the drawn preview. To use your own, save a 4:3 image (about 1280×960) as `assets/shots/nexcent.jpg`, `worknest.jpg`, `lagos.jpg` or `lusterquest.jpg` (or `.png`). WorkNest has no live link, so it needs your own screenshot.
-- **Photo:** `assets/mo.jpg`. Replace it with another 4:5 portrait using the same name to change it.
-- **Years and descriptions:** every project shows 2026, so correct the years and check the Nexcent description.
+
+- **Project screenshots:** save as `public/assets/shots/<key>.jpg` (16:10, about 1280×800). The keys are `nexcent`, `worknest`, `lagos`, `lusterquest`.
+- **New project:** add an entry to `projects` in `src/data.js` and a screenshot with the same `key`.
+- **Photo:** replace `public/assets/mo.jpg` (4:5 portrait) using the same name.
+- **Years:** every project currently says 2026.
