@@ -11,7 +11,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="assets/mo.jpg">
   <link rel="stylesheet" href="styles.css">
   <script>try{if(sessionStorage.getItem("mo-seen"))document.documentElement.classList.add("no-loader")}catch(e){}</script>
 </head>
@@ -29,7 +30,7 @@
 
   <header class="nav">
     <a class="logo" href="#top" aria-label="Mo Phillips, home">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFC531"/><text x="24" y="31" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="22" fill="#232323">mo</text></svg>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#FFC531"/><text x="24" y="30" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="17" fill="#232323">mo</text></svg>
     </a>
     <nav aria-label="Main">
       <a href="#work">Work</a>
@@ -43,11 +44,19 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <h1>
-        <span class="hi">Hi, i'm Mo<span class="wave" aria-hidden="true">👋🏾</span></span>
-        <span class="sub">a programme leader who builds websites, tools and AI automations with React, Node.js and n8n — and here's everything i've made.</span>
-      </h1>
-      <svg class="scribble" viewBox="0 0 420 30" aria-hidden="true"><path d="M4 20 C 80 6, 150 28, 220 14 S 360 6, 416 18" fill="none" stroke="#FF6B4A" stroke-width="5" stroke-linecap="round"/></svg>
+      <div class="hero-head">
+        <div class="hero-intro">
+          <h1>
+            <span class="hi">Hi, i'm Mo<span class="wave" aria-hidden="true">👋🏾</span></span>
+            <span class="sub">a programme leader who builds websites, tools and AI automations with React, Node.js and n8n. Here are some of the things I have whipped up.</span>
+          </h1>
+          <svg class="scribble" viewBox="0 0 420 30" aria-hidden="true"><path d="M4 20 C 80 6, 150 28, 220 14 S 360 6, 416 18" fill="none" stroke="#FF6B4A" stroke-width="5" stroke-linecap="round"/></svg>
+        </div>
+        <figure class="portrait">
+          <img src="assets/mo.jpg" alt="Modupe Phillips" width="720" height="900">
+          <figcaption class="portrait-tag">Lagos · open to remote</figcaption>
+        </figure>
+      </div>
 
       <div class="hero-cards">
         <figure class="hcard c1">
@@ -68,7 +77,7 @@
           <div class="hc-art art-lead" aria-hidden="true">
             <span class="sticky s1">KPIs</span><span class="sticky s2">SOPs</span><span class="sticky s3">roadmap</span><span class="sticky s4">RACI</span>
           </div>
-          <figcaption>leading transformations</figcaption>
+          <figcaption>leading transformation projects</figcaption>
         </figure>
       </div>
     </section>
@@ -84,6 +93,7 @@
     <!-- WORK -->
     <section id="work" class="work">
       <h2 class="section-title">Work</h2>
+      <p class="section-lede">Some of the things I have whipped up.</p>
       <ul class="work-list">
         <li class="work-item" data-project="nexcent" data-preview="pv-nexcent">
           <a href="#" class="work-link">
@@ -188,7 +198,7 @@
         </article>
         <article class="skill sk-pm">
           <span class="sticker" aria-hidden="true">✓</span>
-          <h3>The part most builders skip</h3>
+          <h3>My other badges</h3>
           <p>13 years of programme and transformation work means I map the process, write the SOP and train the team, so the tool actually gets used after launch.</p>
           <ul>
             <li>Process maps, RACI, SOPs and SLAs</li>
@@ -220,8 +230,6 @@
           <ul>
             <li><b>Node.js</b><span>APIs, server logic and scripts</span></li>
             <li><b>REST APIs &amp; webhooks</b><span>Connecting apps and moving data between them</span></li>
-            <li><b>Claude API</b><span>AI assistants built into web apps</span></li>
-            <li><b>OpenAI API</b><span>Text generation, classification and chat</span></li>
           </ul>
         </div>
         <div class="tk-group tg-auto">
@@ -277,16 +285,45 @@
   <footer class="footer" id="contact">
     <div class="foot-top">
       <p class="foot-kicker">got a process eating your week?</p>
-      <a class="foot-big" href="mailto:modupeola.bolarinwa@gmail.com?subject=Let's%20build%20something">let's build it<span aria-hidden="true">→</span></a>
+      <a class="foot-big" href="mailto:modupe.phillips@lusterquest.com?subject=Let's%20build%20something">let's build it<span aria-hidden="true">→</span></a>
+      <div class="foot-contact">
+        <a href="tel:+2348077855777"><small>call me</small>+234 807 785 5777</a>
+        <a href="mailto:modupe.phillips@lusterquest.com"><small>email me</small>modupe.phillips@lusterquest.com</a>
+      </div>
     </div>
-    <div class="stickers" aria-hidden="true">
-      <span class="stk k1">danfo</span>
-      <span class="stk k2">&lt;/&gt;</span>
-      <span class="stk k3">n8n</span>
-      <span class="stk k4">⚡ AI</span>
-      <span class="stk k5">jollof-powered</span>
-      <span class="stk k6">PRINCE2</span>
-      <span class="stk k7">Lagos</span>
+    <div class="pro">
+      <p class="pro-label">my professional skills</p>
+      <ul class="pro-skills">
+        <li>Programme &amp; Portfolio Management</li>
+        <li>Project Management</li>
+        <li>PRINCE2</li>
+        <li>Technical Programme Management</li>
+        <li>Business Transformation</li>
+        <li>Change Management</li>
+        <li>Business Process Re-engineering</li>
+        <li>Operating Model &amp; Organisation Design</li>
+        <li>Digital Transformation</li>
+        <li>Digital Product Delivery</li>
+        <li>MVP Scoping &amp; Product Roadmaps</li>
+        <li>Fintech &amp; Payments</li>
+        <li>FX Operations</li>
+        <li>AI &amp; Workflow Automation</li>
+        <li>Web Development</li>
+        <li>Data Analysis &amp; Dashboards</li>
+        <li>KPI &amp; Performance Management</li>
+        <li>SOPs, SLAs &amp; RACI</li>
+        <li>Stakeholder Engagement</li>
+        <li>Community Engagement</li>
+        <li>ESG &amp; Sustainability</li>
+        <li>CSR &amp; Social Impact</li>
+        <li>Grant Management</li>
+        <li>Capacity Building</li>
+        <li>Public Sector Reform</li>
+        <li>Entrepreneurship Development</li>
+        <li>Brand &amp; Communications Strategy</li>
+        <li>Public Relations</li>
+        <li>HR &amp; Operations</li>
+      </ul>
     </div>
     <div class="foot-bottom">
       <nav aria-label="Footer">
@@ -294,7 +331,8 @@
       </nav>
       <nav aria-label="Social">
         <a href="https://www.linkedin.com/in/modupephillips" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:modupeola.bolarinwa@gmail.com">Email</a>
+        <a href="mailto:modupe.phillips@lusterquest.com">Email</a>
+        <a href="tel:+2348077855777">Call</a>
       </nav>
       <p>website coded with love in Lagos · © <span id="year">2026</span></p>
     </div>

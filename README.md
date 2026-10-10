@@ -33,4 +33,5 @@ You can also deploy without GitHub: `npm i -g vercel`, then run `vercel` and the
 ## Things to update
 - **Project links:** fill in `PROJECT_LINKS` in `script.js`. Each project title becomes a link once its URL is filled in.
 - **Screenshots:** the project images are drawn in CSS. To use real screenshots, save them in `assets/` and replace the inside of each `.pv` div near the bottom of the Work section with `<img src="assets/worknest.png" alt="WorkNest application flow">`.
+- **Photo:** `assets/mo.jpg`. Replace it with another 4:5 portrait using the same name to change it.
 - **Years and descriptions:** every project shows 2026, so correct the years and check the Nexcent description.

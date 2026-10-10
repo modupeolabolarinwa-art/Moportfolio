@@ -74,7 +74,8 @@ window.addEventListener("mousemove", (e) => {
   requestAnimationFrame(follow);
 })();
 
-/* ---------- Footer stickers drop in when the footer scrolls into view ---------- */
+/* ---------- Footer skills drop in one after another when the footer scrolls into view ---------- */
+document.querySelectorAll(".pro-skills li").forEach((li, i) => li.style.setProperty("--i", i));
 const footer = document.querySelector(".footer");
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
