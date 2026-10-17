@@ -27,7 +27,7 @@ export default function Hero() {
         </div>
         <figure className="portrait">
           <img src="/assets/mo.jpg" alt="Modupe Phillips" width="720" height="900" />
-          <figcaption className="portrait-tag">Lagos · open to remote</figcaption>
+          <figcaption className="portrait-tag">UK · open to remote</figcaption>
         </figure>
       </div>
 

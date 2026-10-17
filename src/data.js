@@ -47,7 +47,7 @@ export const projects = [
     title: "Driving in Lagos, a game about surviving Lagos roads",
     type: "Browser Game",
     year: "2026",
-    url: "https://driving-in-lagos.vercel.app/",
+    url: "https://driving-in-lagos-wc15.vercel.app/",
     blurb:
       "Drive the Ikeja to Mile 12 route: pick up fares, dodge potholes and read the danfos before they cut you off. Slow down for craters that burst tyres, watch for pedestrians and marshals, and stop when a VIO officer flags you down. Players sign in, earn fares into a wallet and track speed and damage. It works on a phone with thumb buttons or on a keyboard with the arrow keys.",
     tools: ["JavaScript", "HTML", "CSS", "Game design", "Vercel"],
@@ -61,6 +61,16 @@ export const projects = [
     blurb:
       "\"Responsible business, measurable impact.\" The site for my consultancy, which helps African organisations manage ESG performance, measure environmental impact and meet sustainability reporting requirements. Behind it sits LQ OS: 11 dashboard views for carbon tracking, ESIA, programme monitoring and reporting, a Responsible Business Index and an embedded AI assistant.",
     tools: ["React", "JavaScript", "HTML", "CSS", "Claude API", "Recharts"],
+  },
+  {
+    key: "shoesfront",
+    title: "Sneakers, a full-stack online shoe store",
+    type: "Full-Stack Web App",
+    year: "2026",
+    url: "https://shoesfront.vercel.app/",
+    blurb:
+      "\"Sneakers that keep up with you.\" A sneaker shop with a React storefront and its own back-end API. Shoppers browse men's and women's styles, filter by brand and category, open a product page, add pairs to a cart and check out, with sign-up and login. Behind it sits an admin dashboard where new shoes go live on the storefront straight away, plus a contact form and a size-help flow.",
+    tools: ["React", "Tailwind CSS", "React Router", "Node.js", "REST APIs", "Vercel"],
   },
 ];
 
@@ -175,15 +185,11 @@ export const professionalSkills = [
   "AI and Automation",
   "Web Development",
   "Programme & Portfolio Management",
-  "Project Management",
   "PRINCE2",
-  "Technical Programme Management",
   "Business Transformation",
   "Change Management",
   "Business Process Re-engineering",
-  "Operating Model & Organisation Design",
   "Digital Transformation",
-  "Digital Product Delivery",
   "MVP Scoping & Product Roadmaps",
   "Fintech & Payments",
   "FX Operations",
@@ -191,7 +197,6 @@ export const professionalSkills = [
   "KPI & Performance Management",
   "SOPs, SLAs & RACI",
   "Stakeholder Engagement",
-  "Community Engagement",
   "ESG & Sustainability",
   "CSR & Social Impact",
   "Grant Management",

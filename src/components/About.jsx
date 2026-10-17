@@ -8,8 +8,8 @@ export default function About() {
         <p className="about-lede">
           I'm Modupe Phillips, but everyone calls me Mo. I've spent 13+ years leading programmes in banking,
           fintech, government reform and social impact: at GTBank, the Aig-Imoukhuede Foundation (with Oxford's
-          Blavatnik School), Pety Trade, SIA Foundation, and my own consultancy, LusterQuest. Somewhere along the
-          way I got tired of waiting for someone else to build the tools, so I learned to build them myself.
+          Blavatnik School), Pety Trade, SIA Foundation, and my own consultancy - LusterQuest. Somewhere along the
+          way I got tired of waiting for someone else to build the tools I needed to ship, so I learned to build them myself.
         </p>
         <ul className="facts">
           {facts.map(([label, value]) => (

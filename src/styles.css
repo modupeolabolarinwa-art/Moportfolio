@@ -109,7 +109,7 @@ a { color: inherit; }
 .previews.show { opacity: 1; transform: translate(-50%,-50%) scale(1) rotate(-4deg); }
 .pv { display: none; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -18px rgba(0,0,0,.35); }
 .pv.on { display: block; }
-.pv-inline { display: none; margin: 0 4px 26px; border-radius: 20px; overflow: hidden; }
+.pv-inline { display: block; margin: 0 4px 26px; max-width: 720px; border-radius: 20px; overflow: hidden; }
 
 /* ===== Real screenshots sit on top of the drawn previews once they load ===== */
 .real-shot { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .4s; background: #fff; }
@@ -286,7 +286,6 @@ a { color: inherit; }
   .sq-grid { grid-template-columns: 1fr 1fr; }
   .work-link { flex-direction: column; gap: 6px; }
   .previews { display: none; }
-  .pv-inline { display: block; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
